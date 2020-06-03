@@ -15,6 +15,9 @@ const app = express();
 //set port using env var or default to 5000
 const PORT = process.env.PORT || 5000;
 
+//body parser
+app.use(express.json());
+
 //mount routers
 app.use("/api/v1/bootcamps", bootcamps);
 
