@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const bootcamps = require("./routes/bootcamps");
+const errorHandler = require("./middleware/error");
 const connectDB = require("./config/db");
 
 //load env vars
@@ -20,6 +21,8 @@ app.use(express.json());
 
 //mount routers
 app.use("/api/v1/bootcamps", bootcamps);
+
+app.use(errorHandler);
 
 const server = app.listen(
     PORT,
