@@ -1,6 +1,5 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const bootcamps = require("./routes/bootcamps");
 const errorHandler = require("./middleware/error");
 const connectDB = require("./config/db");
 
@@ -18,6 +17,8 @@ const PORT = process.env.PORT || 5000;
 
 //body parser
 app.use(express.json());
+
+const bootcamps = require("./routes/bootcamps");
 
 //mount routers
 app.use("/api/v1/bootcamps", bootcamps);
