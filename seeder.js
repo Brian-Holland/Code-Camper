@@ -35,6 +35,7 @@ const deleteData = async () => {
     }
 };
 
+//import or delte depnding on flag provided in cmd line
 if (process.argv[2] === "-i") {
     importData();
 } else if (process.argv[2] === "-d") {
