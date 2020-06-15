@@ -22,6 +22,7 @@ const courses = JSON.parse(
     fs.readFileSync(`${__dirname}/_data/courses.json`, "utf-8")
 );
 
+//import data for seeder, log confirmation
 const importData = async () => {
     try {
         await Bootcamp.create(bootcamps);
@@ -33,6 +34,7 @@ const importData = async () => {
     }
 };
 
+//delete data for seeder, log confirmation
 const deleteData = async () => {
     try {
         await Bootcamp.deleteMany();
